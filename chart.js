@@ -178,7 +178,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const { value } = event.target;
     try {
       const newLayers = value.split(',').map((str) => parseInt(str));
-      console.log('newLayers', newLayers);
       if (!newLayers.length || newLayers.some((num) => isNaN(num))) {
         throw new Error('Введите числа через запятую')
       }
