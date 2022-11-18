@@ -1,0 +1,56 @@
+<html>
+
+<head>
+  <title>My first Timeline</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="graph-wrapper">
+    <div id="neurons-wrapper"></div>
+    <div id="wrapper" style="z-index: 2; background: white;"></div>
+  </div>
+  <div class="ui-wrapper">
+    <button id="regenerate" class="button">Generate (random distribution)</button>
+    <div class="bottom-controls">
+      <div class="activation-types">
+        <button id="activation--sigmoid" class="button">sigmoid</button>
+        <button id="activation--leaky-relu" class="button">leaky-relu</button>
+        <button id="activation--tanh" class="button">tanh</button>
+      </div>
+      <div class="stats__container">
+        <div class="stats">
+          <span class="stats__title">Data Noise</span>
+          <input class="stats__value" min="0" max="1" type="number" id="input-noise"></input>
+        </div>
+        <div class="stats">
+          <span class="stats__title">Learning Rate</span>
+          <input class="stats__value" min="0.00001" max="1" type="number" id="input-learningRate"></input>
+        </div>
+        <div class="stats">
+          <span class="stats__title">Hidden Layers</span>
+          <input class="stats__value" type="text" id="input-layers"></input>
+        </div>
+        <div class="stats">
+          <span class="stats__title">epoch</span>
+          <span class="stats__value" id="stats-iterations"></span>
+        </div>
+        <div class="stats">
+          <span class="stats__title">Error</span>
+          <span class="stats__value" id="stats-error"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myCanvasWrapper"></div>
+  <script src="./data.js"></script>
+  <script src="./d3.v6.js"></script>
+  <script src="./ui.js"></script>
+  <script src="./dataset.js"></script>
+  <script src="./brain.js"></script>
+  <script src="./neurons.js"></script>
+  <script src="./chart.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+:root {
+  --padding: 16px;
+  --border-radius: 16px;
+  --border: 1px solid grey;
+}
+
+.ui-wrapper {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+#wrapper {
+  position: relative;
+}
+
+#regenerate {
+  width: fit-content;
+}
+
+.button {
+  background: blue;
+  border: var(--border);
+  padding: var(--padding);
+  border-radius: 30px;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+.button--passive {
+  background-color: white;
+  color: grey;
+}
+
+.bottom-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.activation-types {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 8px;
+}
+
+.activation-types .button {
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.stats__container {
+  display: flex;
+  gap: 16px;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  border: var(--border);
+  width: 200px;
+  height: 55px;
+  padding: 16px 8px 8px;
+  position: relative;
+}
+
+.stats__title {
+  position: absolute;
+  top: -20%;
+  width: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+.stats__value {
+  font-size: 22px;
+}
+
+.stats input {
+  width: 100%;
+  border: none;
+}
+
+.graph-wrapper {
+  display: flex;
+}
