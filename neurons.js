@@ -35,7 +35,6 @@ class neuronsUI {
     this.radius = this.dimensions.height / (this.maxHeight * 5);
     this.yDomain = [0, this.maxHeight];
     this.xDomain = [0, this.layers.length - 1];
-    console.log('this.xDomain', this.xDomain);
     this.yScale = d3
       .scaleLinear()
       .domain(this.yDomain)
@@ -126,17 +125,13 @@ class neuronsUI {
     }).flat(2).filter((link) => !!link);
   }
 
-  setNewData() {
-
-  }
-
   updateData(data) {
     data.layers.splice(0, 1, {
       biases: [-1, 1],
       weights: [],
     });
     this.layers = data.layers;
-    this.nodesData = data.layers = data.layers.map((layer, layerIndex) => {
+    this.nodesData = data.layers.map((layer, layerIndex) => {
       const height = this.maxHeight;
       const count = layer.biases.length;
       const step = height / (count + 1);
