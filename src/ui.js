@@ -1,4 +1,6 @@
-class UI {
+import * as d3 from "d3";
+
+export default class UI {
   dimensions = {
     width: 500,
     height: 500,
@@ -10,7 +12,7 @@ class UI {
   xAxis;
   circles;
 
-  domain = [-1, 1];
+  domain = [0, 1];
   pointColors = ["red", "green"];
   yScale;
   xScale;
@@ -70,32 +72,32 @@ class UI {
       .domain(this.domain)
       .range([0, this.dimensions.boundedWidth]);
 
-    this.yAxisGenerator = d3.axisRight().scale(this.yScale);
-    this.xAxisGenertor = d3.axisBottom().scale(this.xScale);
+    // this.yAxisGenerator = d3.axisRight().scale(this.yScale);
+    // this.xAxisGenertor = d3.axisBottom().scale(this.xScale);
 
     this.colorScale = d3
       .scaleLinear()
       .domain(this.domain)
       .range(this.pointColors);
 
-    this.yAxis = this.svg
-      .append("g")
-      .call(this.yAxisGenerator)
-      .style(
-        "transform",
-        `translate(${
-          this.dimensions.boundedWidth
-        }px, ${0}px)`
-      );
-    this.xAxis = this.svg
-      .append("g")
-      .call(this.xAxisGenertor)
-      .style(
-        "transform",
-        `translate(${0}px, ${
-          this.dimensions.boundedHeight
-        }px)`
-      );
+    // this.yAxis = this.svg
+    //   .append("g")
+    //   .call(this.yAxisGenerator)
+    //   .style(
+    //     "transform",
+    //     `translate(${
+    //       this.dimensions.boundedWidth
+    //     }px, ${0}px)`
+    //   );
+    // this.xAxis = this.svg
+    //   .append("g")
+    //   .call(this.xAxisGenertor)
+    //   .style(
+    //     "transform",
+    //     `translate(${0}px, ${
+    //       this.dimensions.boundedHeight
+    //     }px)`
+    //   );
 
     this.circles = this.bounds.append("g").classed("circles", true);
 
@@ -142,7 +144,6 @@ class UI {
   }
 
   updateCanvas(data) {
-    // data = this.reduceMatrix(data);
     let dx = data[0].length;
     let dy = data.length;
 

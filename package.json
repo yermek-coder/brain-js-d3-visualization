@@ -1,0 +1,25 @@
+{
+  "name": "brain-js-d3-visualization",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/yermek-coder/brain-js-d3-visualization.git",
+  "author": "ermek.orazgaliev <ermek.orazgaliev@fabrique.studio>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack serve"
+  },
+  "devDependencies": {
+    "css-loader": "^6.7.2",
+    "html-webpack-plugin": "^5.5.0",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "brain.js": "^2.0.0-beta.17",
+    "d3": "^7.6.1",
+    "gpu.js": "^2.16.0"
+  }
+}

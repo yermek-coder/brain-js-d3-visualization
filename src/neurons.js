@@ -1,4 +1,6 @@
-class neuronsUI {
+import * as d3 from "d3";
+
+export default class neuronsUI {
   dimensions = {
     width: 500,
     height: 500,

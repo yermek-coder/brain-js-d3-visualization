@@ -1,9 +1,17 @@
+import * as d3 from "d3";
+import * as brain from "brain.js";
+
+import neuronsUI from "./neurons";
+import UI from "./ui";
+import { generateDotesBrainJSFix, getTrainData, generateDotes } from "./dataset";
+import './style.css';
+
 window.addEventListener("DOMContentLoaded", () => {
   const visualDataCount = 250;
   const trainDataCount = 250;
-  let noise = 0.01;
+  let noise = 0.00;
 
-  const visualData = generateDotes(visualDataCount, noise);
+  const visualData = generateDotesBrainJSFix(visualDataCount, noise);
   const trainData = getTrainData(generateDotes(trainDataCount, noise));
 
   const config = {
@@ -24,12 +32,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const xScale = d3
     .scaleLinear()
     .domain([0, 100 - 1])
-    .range([-1, 1]);
+    .range([0, 1]);
   const yScale = d3
     .scaleLinear()
     .domain([100 - 1, 0])
-    .range([-1, 1]);
-  let frameCounter = 0;
+    .range([0, 1]);
 
   // neurons ui
   let neuronsGraph = null;
@@ -45,6 +52,8 @@ window.addEventListener("DOMContentLoaded", () => {
     iterationsEl.textContent = iterations;
     errorEl.textContent = error.toFixed(4);
   }
+  
+  let frameCounter = 0;
 
   const runDrawing = () => {
     frameCounter += 1;
@@ -99,7 +108,7 @@ window.addEventListener("DOMContentLoaded", () => {
     visualData.splice(0, visualData.length);
     trainData.splice(0, visualData.length);
 
-    visualData.push(...generateDotes(visualDataCount, noise));
+    visualData.push(...generateDotesBrainJSFix(visualDataCount, noise));
     visualData.push(...getTrainData(generateDotes(trainDataCount, noise)));
 
     restartNet();
