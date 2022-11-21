@@ -8,7 +8,7 @@ module.exports = {
     index: './src/index.js',
   },
   output: {
-    filename: '[name][contenthash].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -37,4 +37,9 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
